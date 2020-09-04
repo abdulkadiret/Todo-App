@@ -6,7 +6,11 @@ function App() {
   const [todoList, setTodList] = useState([]);
 
   const addTodoItem = (todoItemValue) => {
-    setTodList(todoList.concat(todoItemValue));
+    const newTodoItem = {
+      value: todoItemValue,
+      completed: false,
+    };
+    setTodList(todoList.concat(newTodoItem));
   };
 
   return (

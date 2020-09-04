@@ -5,7 +5,7 @@ const TodoList = (props) => {
     <section className="main">
       <ul className="todo-list">
         {props.todos.map((todo) => (
-          <li>{todo}</li>
+          <li>{todo.value}</li>
         ))}
       </ul>
     </section>

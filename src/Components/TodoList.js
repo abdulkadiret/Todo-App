@@ -5,7 +5,16 @@ const TodoList = (props) => {
     <section className="main">
       <ul className="todo-list">
         {props.todos.map((todo) => (
-          <li>{todo.value}</li>
+          <li className={todo.completed ? 'completed' : ''}>
+            <div className="view">
+              <input
+                className="toggle"
+                type="checkbox"
+                onChange={() => props.completeTodo(todo.value)}
+              />
+              <label>{todo.value}</label>
+            </div>
+          </li>
         ))}
       </ul>
     </section>

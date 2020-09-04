@@ -13,10 +13,20 @@ function App() {
     setTodList(todoList.concat(newTodoItem));
   };
 
+  const completeTodoItem = (todoItemValue) => {
+    const updatedTodo = todoList.map((todo) => {
+      if (todo.value === todoItemValue) {
+        todo.completed = !todo.completed;
+      }
+      return todo;
+    });
+    setTodList(updatedTodo);
+  };
+
   return (
     <div className="todoapp">
       <Header addTodo={addTodoItem} />
-      <TodoList todos={todoList} />
+      <TodoList todos={todoList} completeTodo={completeTodoItem} />
     </div>
   );
 }

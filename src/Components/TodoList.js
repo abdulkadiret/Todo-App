@@ -1,21 +1,13 @@
 import React from 'react';
+import TodoItem from './TodoItem';
 
 const TodoList = (props) => {
   return (
     <section className="main">
       <ul className="todo-list">
-        {props.todos.map((todo) => (
-          <li className={todo.completed ? 'completed' : ''}>
-            <div className="view">
-              <input
-                className="toggle"
-                type="checkbox"
-                onChange={() => props.completeTodo(todo.value)}
-              />
-              <label>{todo.value}</label>
-            </div>
-          </li>
-        ))}
+        {props.todos.map((todo) => {
+          return <TodoItem todo={todo} completeTodo={props.completeTodo} />;
+        })}
       </ul>
     </section>
   );

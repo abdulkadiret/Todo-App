@@ -1,8 +1,8 @@
 import React from 'react';
 
 const TodoItem = (props) => {
-  const handleCompleted = (e) => {
-    props.completeTodo(props.todo.value);
+  const handleCompleted = () => {
+    props.completeTodo(props.todo.id);
   };
 
   return (

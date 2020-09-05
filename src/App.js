@@ -4,7 +4,7 @@ import TodoList from './Components/TodoList';
 import shortid from 'shortid';
 
 function App() {
-  const [todoList, setTodList] = useState([]);
+  const [todoList, setTodoList] = useState([]);
 
   const addTodoItem = (todoItemValue) => {
     const newTodoItem = {
@@ -12,7 +12,7 @@ function App() {
       value: todoItemValue,
       completed: false,
     };
-    setTodList(todoList.concat(newTodoItem));
+    setTodoList(todoList.concat(newTodoItem));
   };
 
   const completeTodoItem = (id) => {
@@ -22,7 +22,7 @@ function App() {
       }
       return todo;
     });
-    setTodList(updatedTodo);
+    setTodoList(updatedTodo);
   };
 
   return (

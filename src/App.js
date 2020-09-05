@@ -12,6 +12,7 @@ function App() {
       value: todoItemValue,
       completed: false,
     };
+    // setTodoList([...todoList, newTodoItem]);
     setTodoList(todoList.concat(newTodoItem));
   };
 
@@ -25,10 +26,19 @@ function App() {
     setTodoList(updatedTodo);
   };
 
+  const deleteTodoItem = (id) => {
+    const updatedTodo = todoList.filter((todo) => todo.id !== id);
+    setTodoList(updatedTodo);
+  };
+
   return (
     <div className="todoapp">
       <Header addTodo={addTodoItem} />
-      <TodoList todos={todoList} completeTodo={completeTodoItem} />
+      <TodoList
+        todos={todoList}
+        completeTodo={completeTodoItem}
+        deleteTodo={deleteTodoItem}
+      />
     </div>
   );
 }

@@ -6,7 +6,13 @@ const TodoList = (props) => {
     <section className="main">
       <ul className="todo-list">
         {props.todos.map((todo) => {
-          return <TodoItem todo={todo} completeTodo={props.completeTodo} />;
+          return (
+            <TodoItem
+              todo={todo}
+              completeTodo={props.completeTodo}
+              deleteTodo={props.deleteTodo}
+            />
+          );
         })}
       </ul>
     </section>

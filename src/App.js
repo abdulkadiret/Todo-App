@@ -15,8 +15,8 @@ function App() {
       value: todoItemValue,
       completed: false,
     };
-    // setTodoList([...todoList, newTodoItem]);
-    setTodoList(todoList.concat(newTodoItem));
+    // setTodoList([newTodoItem, ...todoList]);
+    setTodoList([newTodoItem].concat(todoList));
   };
 
   const completeTodoItem = (id) => {

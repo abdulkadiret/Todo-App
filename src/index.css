@@ -1,0 +1,39 @@
+body {
+  line-height: normal;
+  background-image: url(https://sanlib.org/wp-content/uploads/2019/11/shapes-bg-color.png);
+  background-color: #e4e2e296;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.todoapp h1 {
+  font-size: 60px;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #75e208 0%, #521ff8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.todo-list li.editing .view {
+  display: block;
+}
+
+.filters li button {
+  color: inherit;
+  margin: 3px;
+  padding: 3px 7px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+
+.filters li button:hover {
+  border-color: rgba(175, 47, 47, 0.1);
+  cursor: pointer;
+}
+
+.filters li button.selected {
+  background: rgba(0, 0, 0, 0.1);
+}

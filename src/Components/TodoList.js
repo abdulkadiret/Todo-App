@@ -26,6 +26,7 @@ const TodoList = (props) => {
           return (
             <TodoItem
               todo={todo}
+              key={todo.id}
               completeTodo={props.completeTodo}
               deleteTodo={props.deleteTodo}
             />

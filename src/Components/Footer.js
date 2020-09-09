@@ -43,6 +43,14 @@ const Footer = (props) => {
           </a>
         </li>
       </ul>
+      {props.todos.some((todo) => todo.completed) ? (
+        <button
+          className="clear-completed"
+          onClick={props.removeAllCompletedTodoItems}
+        >
+          Clear-completed
+        </button>
+      ) : null}
     </footer>
   );
 };

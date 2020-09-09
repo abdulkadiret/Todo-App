@@ -37,6 +37,10 @@ function App() {
     setFilter(filter);
   };
 
+  const removeAllCompletedTodoItems = () => {
+    setTodoList(todoList.filter((todo) => !todo.completed));
+  };
+
   return (
     <div className="todoapp">
       <Header addTodo={addTodoItem} />
@@ -46,7 +50,12 @@ function App() {
         completeTodo={completeTodoItem}
         deleteTodo={deleteTodoItem}
       />
-      <Footer todos={todoList} filter={filter} filterTodos={filterTodos} />
+      <Footer
+        todos={todoList}
+        filter={filter}
+        filterTodos={filterTodos}
+        removeAllCompletedTodoItems={removeAllCompletedTodoItems}
+      />
     </div>
   );
 }

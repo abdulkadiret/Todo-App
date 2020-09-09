@@ -3,6 +3,14 @@ import React from 'react';
 const Footer = (props) => {
   return (
     <footer className="footer">
+      <span className="todo-count">
+        <strong>{props.todos.filter((todo) => !todo.completed).length}</strong>{' '}
+        item
+        {props.todos.filter((todo) => !todo.completed).length === 1
+          ? ''
+          : 's'}{' '}
+        left
+      </span>
       <ul className="filters">
         <li>
           <a

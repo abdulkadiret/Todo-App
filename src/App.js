@@ -33,7 +33,7 @@ function App() {
     setTodoList(updatedTodo);
   };
 
-  const filterTodos = (filter) => {
+  const filterTodoItems = (filter) => {
     setFilter(filter);
   };
 
@@ -53,7 +53,7 @@ function App() {
       <Footer
         todos={todoList}
         filter={filter}
-        filterTodos={filterTodos}
+        filterTodoItems={filterTodoItems}
         removeAllCompletedTodoItems={removeAllCompletedTodoItems}
       />
     </div>

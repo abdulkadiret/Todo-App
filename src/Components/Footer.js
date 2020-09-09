@@ -15,7 +15,7 @@ const Footer = (props) => {
         <li>
           <a
             href="#"
-            onClick={() => props.filterTodos('all')}
+            onClick={() => props.filterTodoItems('all')}
             className={props.filter === 'all' ? 'selected' : ''}
             role="button"
           >
@@ -25,7 +25,7 @@ const Footer = (props) => {
         <li>
           <a
             href="#"
-            onClick={() => props.filterTodos('active')}
+            onClick={() => props.filterTodoItems('active')}
             className={props.filter === 'active' ? 'selected' : ''}
             role="button"
           >
@@ -35,7 +35,7 @@ const Footer = (props) => {
         <li>
           <a
             href="#"
-            onClick={() => props.filterTodos('completed')}
+            onClick={() => props.filterTodoItems('completed')}
             className={props.filter === 'completed' ? 'selected' : ''}
             role="button"
           >

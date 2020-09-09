@@ -13,34 +13,28 @@ const Footer = (props) => {
       </span>
       <ul className="filters">
         <li>
-          <a
-            href="#"
+          <button
             onClick={() => props.filterTodoItems('all')}
             className={props.filter === 'all' ? 'selected' : ''}
-            role="button"
           >
             All
-          </a>
+          </button>
         </li>
         <li>
-          <a
-            href="#"
+          <button
             onClick={() => props.filterTodoItems('active')}
             className={props.filter === 'active' ? 'selected' : ''}
-            role="button"
           >
             Active
-          </a>
+          </button>
         </li>
         <li>
-          <a
-            href="#"
+          <button
             onClick={() => props.filterTodoItems('completed')}
             className={props.filter === 'completed' ? 'selected' : ''}
-            role="button"
           >
             Completed
-          </a>
+          </button>
         </li>
       </ul>
       {props.todos.some((todo) => todo.completed) ? (

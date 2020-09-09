@@ -37,10 +37,7 @@ const TodoItem = (props) => {
   }
 
   return (
-    <li
-      className={`editing ${props.todo.completed ? 'completed' : ''}`}
-      key={props.todo.id}
-    >
+    <li className={`editing ${props.todo.completed ? 'completed' : ''}`}>
       <div className="view">
         <input
           className="toggle"

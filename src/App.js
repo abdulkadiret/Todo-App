@@ -7,6 +7,7 @@ import shortid from 'shortid';
 function App() {
   const [todoList, setTodoList] = useState([]);
   const [filter, setFilter] = useState('all');
+  const [toggleAllTodoItems, setToggleAllTodoItems] = useState(false);
 
   const addTodoItem = (todoItemValue) => {
     const newTodoItem = {
@@ -41,6 +42,16 @@ function App() {
     setTodoList(todoList.filter((todo) => !todo.completed));
   };
 
+  const handleToggleAllTodoItems = () => {
+    const isCompleted = todoList.every((todo) => todo && todo.completed);
+    const updatedTodo = todoList.map((todo) => {
+      todo.completed = !isCompleted;
+      return todo;
+    });
+    setTodoList(updatedTodo);
+    setToggleAllTodoItems(toggleAllTodoItems);
+  };
+
   return (
     <div className="todoapp">
       <Header addTodo={addTodoItem} />
@@ -49,6 +60,7 @@ function App() {
         filter={filter}
         completeTodo={completeTodoItem}
         deleteTodo={deleteTodoItem}
+        handleToggleAllTodoItems={handleToggleAllTodoItems}
       />
       <Footer
         todos={todoList}

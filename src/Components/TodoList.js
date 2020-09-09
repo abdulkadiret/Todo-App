@@ -13,6 +13,14 @@ const TodoList = (props) => {
 
   return (
     <section className="main">
+      <input
+        id="toggle-all"
+        className="toggle-all"
+        type="checkbox"
+        checked={props.toggleAllTodoItems}
+        onChange={props.handleToggleAllTodoItems}
+      />
+      <label htmlFor="toggle-all">Mark all as complete</label>
       <ul className="todo-list">
         {todos.map((todo) => {
           return (

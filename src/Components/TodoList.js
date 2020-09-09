@@ -2,10 +2,19 @@ import React from 'react';
 import TodoItem from './TodoItem';
 
 const TodoList = (props) => {
+  let todos = [];
+  if (props.filter === 'all') {
+    todos = props.todos;
+  } else if (props.filter === 'active') {
+    todos = props.todos.filter((todo) => !todo.completed);
+  } else if (props.filter === 'completed') {
+    todos = props.todos.filter((todo) => todo.completed);
+  }
+
   return (
     <section className="main">
       <ul className="todo-list">
-        {props.todos.map((todo) => {
+        {todos.map((todo) => {
           return (
             <TodoItem
               todo={todo}

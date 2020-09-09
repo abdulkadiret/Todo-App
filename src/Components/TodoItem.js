@@ -42,7 +42,12 @@ const TodoItem = (props) => {
       key={props.todo.id}
     >
       <div className="view">
-        <input className="toggle" type="checkbox" onChange={handleCompleted} />
+        <input
+          className="toggle"
+          type="checkbox"
+          onChange={handleCompleted}
+          checked={props.todo.completed}
+        />
         <label onDoubleClick={enableEditMode} style={viewStyle}>
           {itemNewValue}
         </label>
